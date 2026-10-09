@@ -1,18 +1,29 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 using namespace std;
 
 class Bikvadratnoe {
 public:
     double koef_a, koef_b, koef_c;
 
+    double vvesti_chislo(string imya) {
+        double znachenieп++;
+        while (true) {
+            cout << "Enter " << imya << ": ";
+            if (cin >> znachenie) {
+                return znachenie;
+            }
+            cout << "This is not a number, enter a number" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+    }
+
     void vvod() {
-        cout << "Enter A: ";
-        cin >> koef_a;
-        cout << "Enter B: ";
-        cin >> koef_b;
-        cout << "Enter C: ";
-        cin >> koef_c;
+        koef_a = vvesti_chislo("A");
+        koef_b = vvesti_chislo("B");
+        koef_c = vvesti_chislo("C");
     }
 
     void reshenie() {
@@ -25,7 +36,7 @@ public:
         cout << "D = " << D << endl;
 
         if (D < 0) {
-            cout << "No solves" << endl;
+            cout << "No roots" << endl;
             return;
         }
 
